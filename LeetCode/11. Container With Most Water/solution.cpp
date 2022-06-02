@@ -32,14 +32,20 @@ public:
 	int * temp_left = left_wall;
 	int * temp_right
 	
-	while (temp_left < right_wall && temp_right > temp_left && temp_right > temp_left) {
-		if (*temp_wall > *left_wall || *temp_wall > *left_wall) {
+	while (temp_right > temp_left) {
+
+		// Checking from the left
+		if (*temp_wall > *left_wall && *temp_wall > *right_wall) {
 		
 			// Found a prospective new wall
 			int left_area = return_area(height, left_wall, temp_wall);
 			int right_area = return_area(height, temp_wall, right_wall);
 
-			if (left_area > )
+			if (left_area > current_area) {
+
+				// The left side is now of focus
+
+			}
 		}
 
 		else
