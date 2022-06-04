@@ -29,13 +29,12 @@ public:
 	int current_area = return_area(height, left_wall, right_wall);
 
 	// Shrinking the waters!
-	int * temp_left = left_wall;
-	int * temp_right
+	int * temp_wall = left_wall + 1;
 	
-	while (temp_right > temp_left) {
+	while (right_wall > temp_wall) {
 
-		// Checking from the left
-		if (*temp_wall > *left_wall && *temp_wall > *right_wall) {
+		// Base Case
+		if (*temp_wall > *left_wall || *temp_wall > *right_wall) {
 		
 			// Found a prospective new wall
 			int left_area = return_area(height, left_wall, temp_wall);
@@ -44,7 +43,13 @@ public:
 			if (left_area > current_area) {
 
 				// The left side is now of focus
-
+				
+				start = height.begin() + temp_left - left_wall;
+				finish = height.end() + 
+				
+				right_area = maxArea( height(start, finish) );
+				
+				return max(left_area, )
 			}
 		}
 
